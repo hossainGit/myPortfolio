@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/Tab_icon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md Mochaddec Hossain — Portfolio</title>
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- Swiper (optional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/skins/color-3.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li><a href="#home" class="nav__link active-link">Home</a></li>
+            <li><a href="#resume" class="nav__link">Resume</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#achievements" class="nav__link">Achievements</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
+          </ul>
+
+          <div class="nav__close" id="nav-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Home -->
+      <section class="home" id="home">
+        <div class="home__container container grid">
+          <img src="assets/img/Photo.jpg" alt="Profile" class="home__img" />
+          <div class="home__data">
+            <h1 class="home__name">MD MOCHADDEC HOSSAIN_</h1>
+            <p class="home__work">Aspiring AI/ML Engineer · Data Analyst · B.Sc. CSE (AIUB)</p>
+
+            <dl class="home__list">
+              <dt>PHONE:</dt>
+              <dd>01957501255</dd>
+              <dt>EMAIL:</dt>
+              <dd><a href="mailto:hossain.aiub21@gmail.com">hossain.aiub21@gmail.com</a></dd>
+              <dt>LOCATION:</dt>
+              <dd>Dhaka, Bangladesh</dd>
+            </dl>
+
+            <div class="home__socials">
+              <a href="https://github.com/hossainGit" target="_blank" class="home__social-link"><i class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/hossain64" target="_blank" class="home__social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hello / About -->
+      <section class="hello section container">
+        <h2 class="section__title">Hello_</h2>
+        <p class="hello__details text-lg">
+          I build practical NLP & ML tools and data pipelines — from data cleaning and dashboards to model fine-tuning and simple API deployments.
+          I’m finishing my B.Sc. in CSE at AIUB and open to junior AI/ML, Data Analyst, or Research Assistant roles.
+        </p>
+        <a href="assets/img/CV.pdf" class="button button--flex text-sm" target="_blank">
+          <i class="fa-solid fa-download"></i> DOWNLOAD CV
+        </a>
+      </section>
+
+      <!-- Resume -->
+      <section class="section container" id="resume">
+        <h2 class="section__title">Resume_</h2>
+        <div class="resume__container grid">
+          <div class="resume__data">
+            <h3 class="resume__title text-sm">EDUCATION</h3>
+            <div class="resume__item">
+              <h3 class="resume__subtitle text-sm">American International University–Bangladesh (AIUB)</h3>
+              <p class="resume__date text-sm">08/2021 – Expected 12/2025</p>
+              <p class="resume__description text-lg">B.Sc. in Computer Science & Engineering — CGPA: 3.40</p>
+            </div>
+          </div>
+
+          <div class="resume__data">
+            <h3 class="resume__title text-sm">EXPERIENCE</h3>
+            <div class="resume__item">
+              <h3 class="resume__subtitle text-sm">Active Green Energy</h3>
+              <p class="resume__date text-sm">07/2025</p>
+              <p class="resume__description text-lg">Data Analysis Project — cleaned sales data, built Power BI dashboards and predictive scripts.</p>
+            </div>
+
+            <div class="resume__item">
+              <h3 class="resume__subtitle text-sm">Teaching Assistant (AIUB)</h3>
+              <p class="resume__date text-sm">06/2019 – 09/2019</p>
+              <p class="resume__description text-lg">Java lab support and tutorial assistance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills (moved right after Resume) -->
+      <section class="section container" id="skills">
+        <h2 class="section__title">Skills_</h2>
+
+        <div class="skills__container grid">
+
+          <!-- Left column: Languages & Libraries, ML & Deep Learning -->
+          <div class="skills__content">
+            <h3 class="skills__title text-sm">Languages & Libraries</h3>
+            <!-- Python -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Python</p>
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 80%"></span></div>
+            </div>
+
+            <!-- SQL -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">SQL</p>
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 70%"></span></div>
+            </div>
+
+            <!-- C++ -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">C++</p>
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 50%"></span></div>
+            </div>
+
+            <!-- Kotlin -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Kotlin</p>
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 50%"></span></div>
+            </div>
+
+            <!-- HTML -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">HTML & CSS</p>
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 80%"></span></div>
+            </div>
+
+
+            <!-- JavaScript -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">JavaScript</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 40%"></span></div>
+            </div>
+
+            
+
+
+            <hr style="margin:16px 0;border:none;border-top:1px solid #e6e6e6;">
+
+            <h3 class="skills__title text-sm">ML & Deep Learning</h3>
+
+            <!-- NLP -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">NLP</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 70%"></span></div>
+            </div>
+
+            <!-- CNN -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">CNN</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 40%"></span></div>
+            </div>
+
+            <!-- Data Pre-processing -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Data Pre-processing</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 80%"></span></div>
+            </div>
+
+            <!-- Feature engineering -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Feature engineering</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 80%"></span></div>
+            </div>
+          </div>
+
+          <!-- Right column: Data Analysis, Tools & Platforms, Soft Skills -->
+          <div class="skills__content">
+            <h3 class="skills__title text-sm">Data Analysis</h3>
+
+            <!-- Power BI -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Power BI</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 70%"></span></div>
+            </div>
+
+            <!-- Excel -->
+            <div class="skills__data">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Excel</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 90%"></span></div>
+            </div>
+
+            <hr style="margin:16px 0;border:none;border-top:1px solid #e6e6e6;">
+
+            <h3 class="skills__title text-sm">Tools & Platforms</h3>
+            <!-- g -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Git CI/CD</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 60%"></span></div>
+            </div>
+
+            <!-- CNN -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Linux</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 70%"></span></div>
+            </div>
+
+            <!-- Data Pre-processing -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">Docker</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 50%"></span></div>
+            </div>
+
+            <!-- Feature engineering -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm"> Firebase</p>
+                
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 60%"></span></div>
+            </div>
+            
+            <hr style="margin:16px 0;border:none;border-top:1px solid #e6e6e6;">
+
+            <h3 class="skills__title text-sm">Soft Skills</h3>
+            <p class="text-sm" style="margin-bottom:8px;">Analytical thinking · Statistics · Problem solving · Adaptability · Team collaboration</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Projects (ALL) -->
+      <section class="work section container" id="projects">
+        <h2 class="section__title">Projects_</h2>
+
+        <div class="projects__container grid">
+
+          <!-- Data Science projects -->
+          <div class="project__group">
+            <h3 class="project__group-title text-lg">Data Science & BI</h3>
+
+            <!-- Sales Reporting Dashboard -->
+            <div class="project__item grid">
+              <img src="assets/img/project-data-cleaning.jpg" alt="Sales Reporting" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">Sales Reporting Dashboard</h3>
+                <p class="project__description"><b>Stack:</b> Python · PostgreSQL · Power BI</p>
+                <p class="project__description">
+                  Designed an ETL pipeline to clean raw sales CSVs, load into PostgreSQL, and expose KPIs through interactive Power BI dashboards.
+                  Automated weekly report generation with Python and produced PDF summaries for stakeholders.
+                </p>
+                <div class="project__links text-sm">
+                  <a href="#" class="project__link" target="_blank">GitHub</a> · <a href="#" class="project__link" target="_blank">Dashboard</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Clinical Performance Visualization -->
+            <div class="project__item grid">
+              <img src="assets/img/project-clinical.jpg" alt="Clinical Visualization" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">Clinical Performance Visualization</h3>
+                <p class="project__description"><b>Stack:</b> Python · Pandas · Excel</p>
+                <p class="project__description">
+                  Built a pipeline to extract structured CSVs from clinician–patient transcripts using rule-based extraction and Pandas.
+                  Created Excel summaries visualizing complaint frequency and medication trends for clinical teams.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI / ML projects -->
+          <div class="project__group">
+            <h3 class="project__group-title text-lg">AI / Machine Learning</h3>
+
+            <!-- Cyberbullying Detection -->
+            <div class="project__item grid">
+              <img src="assets/img/project-cyberbully.jpg" alt="Cyberbullying" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">Cyberbullying Detection (TF-IDF & BERT)</h3>
+                <p class="project__description"><b>Stack:</b> Python · scikit-learn · Hugging Face · BERT</p>
+                <p class="project__description">
+                  Built TF-IDF baselines (SVM, Logistic Regression) and fine-tuned BERT for toxic comment detection.
+                  Implemented preprocessing (normalization, tokenization, class balancing) and systematic evaluation to compare baselines vs transformer.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a> · <a href="#" class="project__link" target="_blank">Notebook</a></div>
+              </div>
+            </div>
+
+            <!-- Cyberbullying Detection (Sentiment variant) -->
+            <div class="project__item grid">
+              <img src="assets/img/project-cyberbully2.jpg" alt="Cyberbullying Sentiment" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">Cyberbullying Detection for Sentiment Analysis</h3>
+                <p class="project__description"><b>Stack:</b> Python · scikit-learn · BERT</p>
+                <p class="project__description">
+                  Pipeline for harmful-comment and sentiment detection using TF-IDF baselines and fine-tuned BERT. Handled normalization, noise removal, and evaluated class-wise metrics.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a></div>
+              </div>
+            </div>
+
+            <!-- Bangla-English code-switched slang detection -->
+            <div class="project__item grid">
+              <img src="assets/img/project-slanged.jpg" alt="Code-switched Slang" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">Bangla–English Code-Switched Slang Detection</h3>
+                <p class="project__description"><b>Stack:</b> Python · Hugging Face · Sentence-Transformers</p>
+                <p class="project__description">
+                  Preprocessing for Bangla–English mixed text (slang normalization, transliteration handling). Trained embedding-based classifiers with data augmentation for low-resource slang.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a></div>
+              </div>
+            </div>
+
+            <!-- AI-Powered Data Cleaning & Prediction Tool -->
+            <div class="project__item grid">
+              <img src="assets/img/project-data-tool.jpg" alt="Data Tool" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">AI-Powered Data Cleaning & Prediction Tool</h3>
+                <p class="project__description"><b>Stack:</b> Python · Pandas · Scikit-learn · Streamlit</p>
+                <p class="project__description">
+                  Interactive Streamlit app to clean datasets, handle missing values, and generate quick predictions using classical ML models. Includes CSV upload, preprocessing options, and visualization.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a> · <a href="#" class="project__link" target="_blank">Demo</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research projects -->
+          <div class="project__group">
+            <h3 class="project__group-title text-lg">Research</h3>
+
+            <div class="project__item grid">
+              <img src="assets/img/project-research.jpg" alt="Research" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">NLP Research & Reproducible Pipelines</h3>
+                <p class="project__description"><b>Stack:</b> scikit-learn · BERT · LSTM · spaCy</p>
+                <p class="project__description">
+                  Built reproducible experiments and ML prototypes (transformer fine-tuning for harmful-content detection). Focus on experiment tracking, reproducibility, and evaluation for publication-readiness.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">Notebooks</a></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Analyst / IoT projects -->
+          <div class="project__group">
+            <h3 class="project__group-title text-lg">Data Analyst & IoT</h3>
+
+            <!-- Smart Irrigation -->
+            <div class="project__item grid">
+              <img src="assets/img/project-iot.jpg" alt="Smart Irrigation" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">Smart Irrigation System (IoT Prototype)</h3>
+                <p class="project__description"><b>Stack:</b> Arduino · C++ · Sensors</p>
+                <p class="project__description">
+                  Prototype using soil-moisture and temperature sensors with an Arduino UNO to automate irrigation decisions. Implemented sensor data collection and remote actuation.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">Repo</a></div>
+              </div>
+            </div>
+
+            <!-- Medication Reminder -->
+            <div class="project__item grid">
+              <img src="assets/img/project-medapp.jpg" alt="Medication App" class="project__img">
+              <div class="project__data">
+                <h3 class="project__title text-lg">Medication Reminder App</h3>
+                <p class="project__description"><b>Stack:</b> Kotlin · Android Studio · Firebase</p>
+                <p class="project__description">
+                  Android app using SQLite for local reminders and Firebase for online sync. Built notification logic and simple UI for reminder management.
+                </p>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">Play Store / Repo</a></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Testimonials / Latest -->
+      <section class="testimonials section">
+        <div class="testimonnial__bg container">
+          <div class="testimonial__icon">
+            <i class="fa-solid fa-quote-right"></i>
+          </div>
+
+          <div class="testimonial__container">
+            <div class="testimonial__item">
+              <h3 class="author__name text-lg">Latest work</h3>
+              <p class="author__project">Improving the cyberbullying detection pipeline and preparing a deployable demo API.</p>
+              <div class="ruler"></div>
+              <p class="testimonial__description text-lg">I focus on reproducible experiments and simple deployments so models can be tested quickly by product teams.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Achievements -->
+      <section class="blog section container" id="achievements">
+        <h2 class="section__title">Achievements_</h2>
+        <div class="posts__container grid">
+          <div class="post__card">
+            <img src="assets/img/award-1.jpg" alt="award" class="post__img">
+            <div class="post__content">
+              <p class="post__date text-xs">Oct 10, 2021</p>
+              <h3 class="post__title text-sm">Summa Cum Laude</h3>
+              <p class="post__description text-sm">Awarded for outstanding academic performance at AIUB.</p>
+            </div>
+          </div>
+          <!-- Add more achievement cards as needed -->
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact section" id="contact">
+        <div class="contact__content container">
+          <h2 class="section__title">Get in touch_</h2>
+          <div class="contact__container grid">
+            <div class="contact__info">
+              <dl class="contact__list">
+                <dt>Phone:</dt>
+                <dd>01957501255</dd>
+                <dt>Address:</dt>
+                <dd>Dhaka, Bangladesh</dd>
+                <dt>Email:</dt>
+                <dd><a href="mailto:hossain.aiub21@gmail.com">hossain.aiub21@gmail.com</a></dd>
+              </dl>
+
+              <ul class="contact__socials">
+                <li><a href="https://www.linkedin.com/in/hossain64" class="contact__social-link" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/hossainGit" class="contact__social-link" target="_blank">GitHub</a></li>
+              </ul>
+            </div>
+
+            <div class="contact__form">
+              <p class="contact__form-title">You can write me a message here_</p>
+              <form action="" id="contact-form">
+                <div class="contact__input-div">
+                  <input name="name" type="text" placeholder="Your name" class="contact__input" id="contact-name">
+                </div>
+                <div class="contact__input-div">
+                  <input name="email" type="email" placeholder="Your email" class="contact__input" id="contact-email">
+                </div>
+                <div class="contact__input-div">
+                  <textarea name="message" class="contact__input textarea" placeholder="Type your message here" id="message" cols="30" rows="10"></textarea>
+                </div>
+                <p class="contact__message text-sm" id="contact-message"></p>
+                <button type="submit" class="button contact__button">SEND</button>
+              </form>
+
+              <p class="footer__copy">&copy; 2025 MD MOCHADDEC HOSSAIN. All Rights Reserved</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Optional scripts (keep as in template) -->
+    <script src="assets/js/mixitup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/common.js"></script>
+  </body>
+</html>
