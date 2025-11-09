@@ -516,6 +516,22 @@ input {
   opacity: 1;
 }
 
+/* Skills filter buttons reuse the same visual style as project categories */
+.skills__btn {
+  color: var(--text-color-alt);
+  font-weight: var(--bold);
+  font-family: var(--mono-font);
+  position: relative;
+  background: none;
+  padding: 0.15rem 0.35rem;
+}
+.skills__btn:hover {
+  color: var(--primary-color);
+}
+.active-skill {
+  color: var(--primary-color);
+}
+
 .projects__container{
   row-gap: 2.5rem;
 }
@@ -559,6 +575,14 @@ input {
 
 .project__link {
   float: right;
+  margin-top: 3.9em;
+  color: var(--primary-color);
+  font-family: var(--mono-font);
+}
+
+.project__link2 {
+  float: right;
+  margin-right: 3rem;  
   margin-top: 3.9em;
   color: var(--primary-color);
   font-family: var(--mono-font);

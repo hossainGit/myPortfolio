@@ -28,14 +28,52 @@ let mixerProjects = mixitup('.projects__container', {
     }
 });
 
-/*=============== Active work =============== */
-const linkWork = document.querySelectorAll('.category__btn');
+/*=============== Project filters (by group) =============== */
+// keep MixItUp enabled for project items (it will respect hidden parents),
+// but implement group-level filtering by showing/hiding .project__group
+const projectFilterButtons = document.querySelectorAll('#project-filters .category__btn');
+if (projectFilterButtons.length) {
+  projectFilterButtons.forEach((btn) => {
+    btn.addEventListener('click', function () {
+      // active state
+      projectFilterButtons.forEach((b) => b.classList.remove('active-work'));
+      this.classList.add('active-work');
 
-function activeWork(){
-    linkWork.forEach((a) => a.classList.remove('active-work'));
-    this.classList.add('active-work');
+      const filter = this.dataset.filter;
+      const groups = document.querySelectorAll('.project__group');
+      if (filter === 'all') {
+        groups.forEach((g) => (g.style.display = ''));
+      } else {
+        groups.forEach((g) => {
+          if (g.dataset.groupKey === filter) g.style.display = '';
+          else g.style.display = 'none';
+        });
+      }
+    });
+  });
 }
-linkWork.forEach((a) => a.addEventListener('click', activeWork));
+
+/*=============== Skills filters =============== */
+const skillsFilterButtons = document.querySelectorAll('#skills-filters .skills__btn');
+if (skillsFilterButtons.length) {
+  skillsFilterButtons.forEach((btn) => {
+    btn.addEventListener('click', function () {
+      skillsFilterButtons.forEach((b) => b.classList.remove('active-skill'));
+      this.classList.add('active-skill');
+
+      const skill = this.dataset.skill;
+      const sections = document.querySelectorAll('.skills__section');
+      if (skill === 'all') {
+        sections.forEach((s) => (s.style.display = ''));
+      } else {
+        sections.forEach((s) => {
+          if (s.dataset.skillKey === skill) s.style.display = '';
+          else s.style.display = 'none';
+        });
+      }
+    });
+  });
+}
 /*=============== Testimonials Swiper =============== */
 
 var swiper = new Swiper(".testimonial__container", {
