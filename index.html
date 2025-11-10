@@ -20,36 +20,46 @@
   </head>
 
   <body>
+    <!-- Skip link for keyboard users -->
+    <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;overflow:hidden;">
+      Skip to content
+    </a>
+
     <!-- Header -->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li><a href="#home" class="nav__link active-link">Home</a></li>
-            <li><a href="#resume" class="nav__link">Resume</a></li>
-            <li><a href="#skills" class="nav__link">Skills</a></li>
-            <li><a href="#projects" class="nav__link">Projects</a></li>
-            <li><a href="#achievements" class="nav__link">Achievements</a></li>
-            <li><a href="#contact" class="nav__link">Contact</a></li>
+    <header class="header" id="header" role="banner">
+      <nav class="nav container" role="navigation" aria-label="Main navigation">
+        <div class="nav__menu" id="nav-menu" aria-hidden="true">
+          <ul class="nav__list" role="menubar">
+            <li role="none"><a role="menuitem" href="#home" class="nav__link active-link">Home</a></li>
+            <li role="none"><a role="menuitem" href="#resume" class="nav__link">Resume</a></li>
+            <li role="none"><a role="menuitem" href="#skills" class="nav__link">Skills</a></li>
+            <li role="none"><a role="menuitem" href="#projects" class="nav__link">Projects</a></li>
+            <li role="none"><a role="menuitem" href="#achievements" class="nav__link">Achievements</a></li>
+            <li role="none"><a role="menuitem" href="#contact" class="nav__link">Contact</a></li>
           </ul>
 
-          <div class="nav__close" id="nav-close">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
+          <button class="nav__close" id="nav-close" aria-label="Close menu">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
         </div>
 
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="fa-solid fa-bars"></i>
-        </div>
+        <button class="nav__toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Open menu">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
       </nav>
     </header>
 
     <!-- Main -->
-    <main class="main">
+    <main class="main" id="main">
       <!-- Home -->
       <section class="home" id="home">
         <div class="home__container container grid">
-          <img src="assets/img/Photo.jpg" alt="Profile" class="home__img" />
+          <!-- Use <picture> for future responsive images. On mobile this can be styled as an avatar by CSS. -->
+          <picture>
+            <source media="(max-width:420px)" srcset="assets/img/Photo-small.jpg" />
+            <img src="assets/img/Photo.jpg" alt="Md Mochaddec Hossain — Profile photo" class="home__img" loading="lazy" />
+          </picture>
+
           <div class="home__data">
             <h1 class="home__name">MD MOCHADDEC HOSSAIN_</h1>
             <p class="home__work">Aspiring AI/ML Engineer · Data Analyst · B.Sc. CSE (AIUB)</p>
@@ -64,9 +74,9 @@
             </dl>
 
             <div class="home__socials">
-              <a href="https://github.com/hossainGit" target="_blank" class="home__social-link"><i class="fa-brands fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/hossain64" target="_blank" class="home__social-link"><i class="fa-brands fa-linkedin-in"></i></a>
-              </div>
+              <a href="https://github.com/hossainGit" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+              <a href="https://www.linkedin.com/in/hossain64" target="_blank" rel="noopener noreferrer" class="home__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            </div>
           </div>
         </div>
       </section>
@@ -78,8 +88,8 @@
           I build practical NLP & ML tools and data pipelines — from data cleaning and dashboards to model fine-tuning and simple API deployments.
           I’m finishing my B.Sc. in CSE at AIUB and open to junior AI/ML, Data Analyst, or Research Assistant roles.
         </p>
-        <a href="assets/img/CV.pdf" class="button button--flex text-sm" target="_blank">
-          <i class="fa-solid fa-download"></i> DOWNLOAD CV
+        <a href="assets/img/CV.pdf" class="button button--flex text-sm" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-download" aria-hidden="true"></i> DOWNLOAD CV
         </a>
       </section>
 
@@ -114,13 +124,23 @@
       </section>
 
       <!-- Skills (moved right after Resume) -->
+      <!-- Skills (moved right after Resume) -->
       <section class="section container" id="skills">
         <h2 class="section__title">Skills_</h2>
+        
+        <!-- Skills Filter Buttons -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="languages">Languages</button>
+          <button class="filter-btn" data-filter="ml-dl">AI/ML</button>
+          <button class="filter-btn" data-filter="data-analysis">Data Analysis</button>
+          <button class="filter-btn" data-filter="tools">Others</button>
+        </div>
 
         <div class="skills__container grid">
 
           <!-- Left column: Languages & Libraries, ML & Deep Learning -->
-          <div class="skills__content">
+          <div class="skills__content" data-category="languages">
             <h3 class="skills__title text-sm">Languages & Libraries</h3>
             <!-- Python -->
             <div class="skills__data" style="margin-bottom: 16px;">
@@ -130,13 +150,7 @@
               <div class="skills__bar"><span class="skills__percentage" style="width: 80%"></span></div>
             </div>
 
-            <!-- SQL -->
-            <div class="skills__data" style="margin-bottom: 16px;">
-              <div class="skills__titles">
-                <p class="skills__name text-sm">SQL</p>
-              </div>
-              <div class="skills__bar"><span class="skills__percentage" style="width: 70%"></span></div>
-            </div>
+            
 
             <!-- C++ -->
             <div class="skills__data" style="margin-bottom: 16px;">
@@ -171,12 +185,9 @@
               </div>
               <div class="skills__bar"><span class="skills__percentage" style="width: 40%"></span></div>
             </div>
+          </div>
 
-            
-
-
-            <hr style="margin:16px 0;border:none;border-top:1px solid #e6e6e6;">
-
+          <div class="skills__content" data-category="ml-dl">
             <h3 class="skills__title text-sm">ML & Deep Learning</h3>
 
             <!-- NLP -->
@@ -217,8 +228,16 @@
           </div>
 
           <!-- Right column: Data Analysis, Tools & Platforms, Soft Skills -->
-          <div class="skills__content">
+          <div class="skills__content" data-category="data-analysis">
             <h3 class="skills__title text-sm">Data Analysis</h3>
+
+            <!-- SQL -->
+            <div class="skills__data" style="margin-bottom: 16px;">
+              <div class="skills__titles">
+                <p class="skills__name text-sm">SQL</p>
+              </div>
+              <div class="skills__bar"><span class="skills__percentage" style="width: 70%"></span></div>
+            </div>
 
             <!-- Power BI -->
             <div class="skills__data" style="margin-bottom: 16px;">
@@ -237,11 +256,11 @@
               </div>
               <div class="skills__bar"><span class="skills__percentage" style="width: 90%"></span></div>
             </div>
+          </div>
 
-            <hr style="margin:16px 0;border:none;border-top:1px solid #e6e6e6;">
-
+          <div class="skills__content" data-category="tools">
             <h3 class="skills__title text-sm">Tools & Platforms</h3>
-            <!-- g -->
+            <!-- Git -->
             <div class="skills__data" style="margin-bottom: 16px;">
               <div class="skills__titles">
                 <p class="skills__name text-sm">Git CI/CD</p>
@@ -250,7 +269,7 @@
               <div class="skills__bar"><span class="skills__percentage" style="width: 60%"></span></div>
             </div>
 
-            <!-- CNN -->
+            <!-- Linux -->
             <div class="skills__data" style="margin-bottom: 16px;">
               <div class="skills__titles">
                 <p class="skills__name text-sm">Linux</p>
@@ -259,7 +278,7 @@
               <div class="skills__bar"><span class="skills__percentage" style="width: 70%"></span></div>
             </div>
 
-            <!-- Data Pre-processing -->
+            <!-- Docker -->
             <div class="skills__data" style="margin-bottom: 16px;">
               <div class="skills__titles">
                 <p class="skills__name text-sm">Docker</p>
@@ -268,7 +287,7 @@
               <div class="skills__bar"><span class="skills__percentage" style="width: 50%"></span></div>
             </div>
 
-            <!-- Feature engineering -->
+            <!-- Firebase -->
             <div class="skills__data" style="margin-bottom: 16px;">
               <div class="skills__titles">
                 <p class="skills__name text-sm"> Firebase</p>
@@ -276,9 +295,10 @@
               </div>
               <div class="skills__bar"><span class="skills__percentage" style="width: 60%"></span></div>
             </div>
-            
-            <hr style="margin:16px 0;border:none;border-top:1px solid #e6e6e6;">
+          </div>
 
+          <!-- Soft Skills (always visible) -->
+          <div class="skills__content soft-skills">
             <h3 class="skills__title text-sm">Soft Skills</h3>
             <p class="text-sm" style="margin-bottom:8px;">Analytical thinking · Statistics · Problem solving · Adaptability · Team collaboration</p>
           </div>
@@ -290,15 +310,22 @@
       <section class="work section container" id="projects">
         <h2 class="section__title">Projects_</h2>
 
-        <div class="projects__container grid">
+        <!-- Filter buttons (simple & reliable) -->
+        <div class="filter-buttons projects-filter" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all" type="button">All</button>
+          <button class="filter-btn" data-filter="data-science" type="button">Data Science</button>
+          <button class="filter-btn" data-filter="ai-ml" type="button">AI / ML</button>
+          <button class="filter-btn" data-filter="application" type="button">Apps & IoT</button>
+        </div>
 
+        <div class="projects__container grid" aria-live="polite">
           <!-- Data Science projects -->
-          <div class="project__group">
+          <div class="project__group" data-category="data-science">
             <h3 class="project__group-title text-lg">Data Science & BI</h3>
 
             <!-- Sales Reporting Dashboard -->
             <div class="project__item grid">
-              <img src="assets/img/project-data-cleaning.jpg" alt="Sales Reporting" class="project__img">
+              <img src="assets/img/sales_dash.png" alt="Sales Reporting Dashboard screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">Sales Reporting Dashboard</h3>
                 <p class="project__description"><b>Stack:</b> Python · PostgreSQL · Power BI</p>
@@ -307,14 +334,15 @@
                   Automated weekly report generation with Python and produced PDF summaries for stakeholders.
                 </p>
                 <div class="project__links text-sm">
-                  <a href="#" class="project__link" target="_blank">GitHub</a> · <a href="#" class="project__link" target="_blank">Dashboard</a>
+                  <a href="#" class="project__link" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+                  <a href="#" class="project__link" target="_blank" rel="noopener noreferrer">Dashboard</a>
                 </div>
               </div>
             </div>
 
             <!-- Clinical Performance Visualization -->
             <div class="project__item grid">
-              <img src="assets/img/clinic.png" alt="Clinical Visualization" class="project__img">
+              <img src="assets/img/clinic.png" alt="Clinical Performance Visualization screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">Clinical Performance Visualization</h3>
                 <p class="project__description"><b>Stack:</b> Python · Pandas · Excel</p>
@@ -322,119 +350,82 @@
                   Built a pipeline to extract structured CSVs from clinician–patient transcripts using rule-based extraction and Pandas.
                   Created Excel summaries visualizing complaint frequency and medication trends for clinical teams.
                 </p>
-                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a></div>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
               </div>
             </div>
           </div>
 
           <!-- AI / ML projects -->
-          <div class="project__group">
+          <div class="project__group" data-category="ai-ml">
             <h3 class="project__group-title text-lg">AI / Machine Learning</h3>
 
-            <!-- Cyberbullying Detection -->
-            <!-- <div class="project__item grid">
-              <img src="assets/img/project-cyberbully.jpg" alt="Cyberbullying" class="project__img">
-              <div class="project__data">
-                <h3 class="project__title text-lg">Cyberbullying Detection (TF-IDF & BERT)</h3>
-                <p class="project__description"><b>Stack:</b> Python · scikit-learn · Hugging Face · BERT</p>
-                <p class="project__description">
-                  Built TF-IDF baselines (SVM, Logistic Regression) and fine-tuned BERT for toxic comment detection.
-                  Implemented preprocessing (normalization, tokenization, class balancing) and systematic evaluation to compare baselines vs transformer.
-                </p>
-                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a> · <a href="#" class="project__link" target="_blank">Notebook</a></div>
-              </div>
-            </div> -->
-
-            <!-- Cyberbullying Detection (Sentiment variant) -->
             <div class="project__item grid">
-              <img src="assets/img/project-cyberbully2.jpg" alt="Cyberbullying Sentiment" class="project__img">
+              <img src="assets/img/senti-ml.png" alt="Cyberbullying sentiment detection screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">Cyberbullying Detection for Sentiment Analysis</h3>
                 <p class="project__description"><b>Stack:</b> Python · scikit-learn · BERT</p>
                 <p class="project__description">
                   Pipeline for harmful-comment and sentiment detection using TF-IDF baselines and fine-tuned BERT. Handled normalization, noise removal, and evaluated class-wise metrics.
                 </p>
-                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a></div>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
               </div>
             </div>
 
-            <!-- Bangla-English code-switched slang detection -->
             <div class="project__item grid">
-              <img src="assets/img/project-slanged.jpg" alt="Code-switched Slang" class="project__img">
+              <img src="assets/img/BengaliSent140 - (1).png" alt="Bangla-English slang detection screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">Bangla–English Code-Switched Slang Detection</h3>
                 <p class="project__description"><b>Stack:</b> Python · Hugging Face · Sentence-Transformers</p>
                 <p class="project__description">
                   Preprocessing for Bangla–English mixed text (slang normalization, transliteration handling). Trained embedding-based classifiers with data augmentation for low-resource slang.
                 </p>
-                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a></div>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank" rel="noopener noreferrer">GitHub</a></div>
               </div>
             </div>
 
-            <!-- AI-Powered Data Cleaning & Prediction Tool -->
             <div class="project__item grid">
-              <img src="assets/img/project-data-tool.jpg" alt="Data Tool" class="project__img">
+              <img src="assets/img/machine_learning.png" alt="AI-Powered Data Cleaning & Prediction Tool screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">AI-Powered Data Cleaning & Prediction Tool</h3>
                 <p class="project__description"><b>Stack:</b> Python · Pandas · Scikit-learn · Streamlit</p>
                 <p class="project__description">
                   Interactive Streamlit app to clean datasets, handle missing values, and generate quick predictions using classical ML models. Includes CSV upload, preprocessing options, and visualization.
                 </p>
-                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">GitHub</a> · <a href="#" class="project__link" target="_blank">Demo</a></div>
+                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="#" class="project__link" target="_blank" rel="noopener noreferrer">Demo</a></div>
               </div>
             </div>
           </div>
 
-          <!-- Research projects -->
-          <!-- <div class="project__group">
-            <h3 class="project__group-title text-lg">Research</h3>
-
-            <div class="project__item grid">
-              <img src="assets/img/project-research.jpg" alt="Research" class="project__img">
-              <div class="project__data">
-                <h3 class="project__title text-lg">NLP Research & Reproducible Pipelines</h3>
-                <p class="project__description"><b>Stack:</b> scikit-learn · BERT · LSTM · spaCy</p>
-                <p class="project__description">
-                  Built reproducible experiments and ML prototypes (transformer fine-tuning for harmful-content detection). Focus on experiment tracking, reproducibility, and evaluation for publication-readiness.
-                </p>
-                <div class="project__links text-sm"><a href="#" class="project__link" target="_blank">Notebooks</a></div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Data Analyst / IoT projects -->
-          <div class="project__group">
+          <!-- Application Development & IoT -->
+          <div class="project__group" data-category="application">
             <h3 class="project__group-title text-lg">Application Development & IoT</h3>
 
             <div class="project__item grid">
-              <img src="assets/img/mannwa.png" alt="Medication App" class="project__img">
+              <img src="assets/img/mannwa.png" alt="Mannwa Food product showcase screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">Product showcase Website</h3>
                 <p class="project__description"><b>Stack:</b> HTML · CSS · Js</p>
                 <p class="project__description">
-                Front-end website to showcase various products of Mannwa Food and Agro using HTML, CSS, and JavaScript.  
+                  Front-end website to showcase various products of Mannwa Food and Agro using HTML, CSS, and JavaScript.
                 </p>
-                <div class="project__links text-sm"><a href="https://hossaingit.github.io/mannwa-food-website/" class="project__link" target="_blank">Visit site</a></div>
+                <div class="project__links text-sm"><a href="https://hossaingit.github.io/mannwa-food-website/" class="project__link" target="_blank" rel="noopener noreferrer">Visit site</a></div>
               </div>
             </div>
-          </div>
 
-            <!-- Smart Irrigation -->
             <div class="project__item grid">
-              <img src="assets/img/IOT.png" alt="Smart Irrigation" class="project__img">
+              <img src="assets/img/iot.png" alt="Smart irrigation prototype screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">Smart Irrigation System (IoT Prototype)</h3>
                 <p class="project__description"><b>Stack:</b> Arduino · C++ · Sensors</p>
                 <p class="project__description">
                   Prototype using soil-moisture and temperature sensors with an Arduino UNO to automate irrigation decisions. Implemented sensor data collection and remote actuation.
                 </p>
-                <div class="project__links text-sm"><a href="assets/docs/IOT-report.pdf" class="project__link" target="_blank">View Report (PDF)</a></div>
+                <div class="project__links text-sm"><a href="assets/docs/IOT-report.pdf" class="project__link" target="_blank" rel="noopener noreferrer">View Report (PDF)</a></div>
               </div>
             </div>
 
-            <!-- Medication Reminder -->
             <div class="project__item grid">
-              <img src="assets/img/app-med.jpg" alt="Medication App" class="project__img">
+              <img src="assets/img/app-med.jpg" alt="Medication Reminder App screenshot" class="project__img" loading="lazy" />
               <div class="project__data">
                 <h3 class="project__title text-lg">Medication Reminder App</h3>
                 <p class="project__description"><b>Stack:</b> Kotlin · Android Studio · Firebase</p>
@@ -442,44 +433,21 @@
                   Android app using SQLite for local reminders and Firebase for online sync. Built notification logic and simple UI for reminder management.
                 </p>
                 <div class="project__links text-sm">
-                  <a href="assets/docs/MediReminderApp.pdf" class="project__link" target="_blank">View Report (PDF)</a> 
-                  
-                  <a href="https://github.com/hossainGit/MedApp-RoomDB-Final" class="project__link2" target="_blank">Visit Github</a>
+                  <a href="assets/docs/MediReminderApp.pdf" class="project__link" target="_blank" rel="noopener noreferrer">View Report (PDF)</a>
+                  <a href="https://github.com/hossainGit/MedApp-RoomDB-Final" class="project__link2" target="_blank" rel="noopener noreferrer">Visit Github</a>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </section>
-
-      <!-- Testimonials / Latest -->
-
-
-      <!-- <section class="testimonials section">
-        <div class="testimonnial__bg container">
-          <div class="testimonial__icon">
-            <i class="fa-solid fa-quote-right"></i>
-          </div>
-
-          <div class="testimonial__container">
-            <div class="testimonial__item">
-              <h3 class="author__name text-lg">Latest work</h3>
-              <p class="author__project">Improving the cyberbullying detection pipeline and preparing a deployable demo API.</p>
-              <div class="ruler"></div>
-              <p class="testimonial__description text-lg">I focus on reproducible experiments and simple deployments so models can be tested quickly by product teams.</p>
-            </div>
-          </div>
-        </div>
-      </section> -->
 
       <!-- Achievements -->
       <section class="blog section container" id="achievements">
         <h2 class="section__title">Certificates & Achievements_</h2>
         <div class="posts__container grid">
-
-<div class="post__card">
-            <img src="assets/img/award.jpg" alt="award" class="post__img">
+          <div class="post__card">
+            <img src="assets/img/award.jpg" alt="Award image" class="post__img" loading="lazy" />
             <div class="post__content">
               <p class="post__date text-xs">Dec 07, 2024</p>
               <h3 class="post__title text-sm">2nd Position at App Design contest</h3>
@@ -488,7 +456,7 @@
           </div>
 
           <div class="post__card">
-            <img src="assets/img/Untitled Project (3).jpg" alt="award" class="post__img">
+            <img src="assets/img/Untitled Project (3).jpg" alt="IEEE membership" class="post__img" loading="lazy" />
             <div class="post__content">
               <p class="post__date text-xs">Oct 10, 2022</p>
               <h3 class="post__title text-sm">IEEE Membership</h3>
@@ -497,31 +465,13 @@
           </div>
 
           <div class="post__card">
-            <img src="assets/img/Untitled Project (5).jpg" alt="award" class="post__img">
+            <img src="assets/img/Untitled Project (5).jpg" alt="Dean's list" class="post__img" loading="lazy" />
             <div class="post__content">
               <p class="post__date text-xs">March 18, 2022</p>
               <h3 class="post__title text-sm">Dean's List of Honors 2022</h3>
               <p class="post__description text-sm">Awarded for outstanding academic performance at AIUB.</p>
             </div>
           </div>
-
-          
-
-          <!-- Add more achievement cards as needed -->
-          <!-- <div class="post__card">
-            <img src="assets/img/aac.jpg" alt="award" class="post__img">
-            <div class="post__content">
-              <p class="post__date text-xs">Oct 10, 2021</p>
-              <h3 class="post__title text-sm">AIUB Arts Club</h3>
-              <p class="post__description text-sm">Organized events, projects & workshops from a Leadership position .</p>
-            </div>
-          </div> -->
-
-          
-
-
-          
-
         </div>
       </section>
 
@@ -541,25 +491,28 @@
               </dl>
 
               <ul class="contact__socials">
-                <li><a href="https://www.linkedin.com/in/hossain64" class="contact__social-link" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/hossainGit" class="contact__social-link" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/hossain64" class="contact__social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                <li><a href="https://github.com/hossainGit" class="contact__social-link" target="_blank" rel="noopener noreferrer">GitHub</a></li>
               </ul>
             </div>
 
             <div class="contact__form">
               <p class="contact__form-title">You can write me a message here_</p>
-              <form action="" id="contact-form">
+              <form action="" id="contact-form" novalidate>
                 <div class="contact__input-div">
-                  <input name="name" type="text" placeholder="Your name" class="contact__input" id="contact-name">
+                  <label for="contact-name" class="sr-only">Your name</label>
+                  <input name="name" id="contact-name" type="text" placeholder="Your name" class="contact__input" required aria-required="true" />
                 </div>
                 <div class="contact__input-div">
-                  <input name="email" type="email" placeholder="Your email" class="contact__input" id="contact-email">
+                  <label for="contact-email" class="sr-only">Your email</label>
+                  <input name="email" id="contact-email" type="email" placeholder="Your email" class="contact__input" required aria-required="true" />
                 </div>
                 <div class="contact__input-div">
-                  <textarea name="message" class="contact__input textarea" placeholder="Type your message here" id="message" cols="30" rows="10"></textarea>
+                  <label for="message" class="sr-only">Message</label>
+                  <textarea name="message" class="contact__input textarea" placeholder="Type your message here" id="message" cols="30" rows="6" required aria-required="true"></textarea>
                 </div>
-                <p class="contact__message text-sm" id="contact-message"></p>
-                <button type="submit" class="button contact__button">SEND</button>
+                <p class="contact__message text-sm" id="contact-message" aria-live="polite"></p>
+                <button type="submit" class="button contact__button" id="contact-submit">SEND</button>
               </form>
 
               <p class="footer__copy">&copy; 2025 MD MOCHADDEC HOSSAIN. All Rights Reserved</p>
@@ -569,11 +522,12 @@
       </section>
     </main>
 
-    <!-- Optional scripts (keep as in template) -->
-    <script src="assets/js/mixitup.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/common.js"></script>
+    <!-- Optional scripts (kept as in template but loaded with defer for safety) -->
+    <script defer src="assets/js/mixitup.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Your consolidated main script -->
+    <script defer src="assets/js/main.js"></script>
   </body>
 </html>
